@@ -26,6 +26,7 @@ try {
     url,
     {
       //useMongoClient: true
+      useNewUrlParser: true
     }
   );
 } catch (err) {

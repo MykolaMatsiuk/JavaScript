@@ -14,7 +14,7 @@ module.exports = {
         User.findById(req.params.id).then(
             /*populate('following').exec*/ (err, user) => {
                 if (err) res.send(err);
-                else if (!user) res.send(404);
+                else if (!user) res.sendStatus(404);
                 else res.send(user);
                 next();
             }
