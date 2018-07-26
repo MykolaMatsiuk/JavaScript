@@ -6,6 +6,7 @@ import Feed from "./components/Feed";
 import Profile from "./components/Profile";
 import ArticleView from "./components/ArticleView";
 import Editor from "./components/Editor";
+import requireAuthentication from "./utils/requireAuth";
 import SignInWith from "./components/SignInWith";
 
 class App extends Component {
@@ -22,7 +23,10 @@ class App extends Component {
             path="/articleview/:id"
             component={ArticleView}
           />
-          <Route path="/editor" component={Editor} />
+          <Route
+            path="/editor"
+            component={requireAuthentication(Editor)}
+          />
           <Route path="**" component={Feed} />
         </Switch>
       </div>
