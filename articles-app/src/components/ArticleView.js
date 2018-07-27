@@ -35,7 +35,7 @@ class ArticleView extends Component {
     } = this.props._article;
     let author_name, author_img, author_id;
     if (author) {
-      const { name, provider_pic, _id } = author_id;
+      const { name, provider_pic, _id } = author;
       author_name = name;
       author_id = _id;
       author_img = provider_pic;
@@ -341,3 +341,15 @@ class ArticleView extends Component {
     );
   }
 }
+
+ArticleView.propTypes = {
+  params: PropTypes.object.isRequired
+};
+export default connect(
+  mapStateToProps,
+  {
+    getArticle,
+    clap,
+    follow
+  }
+)(ArticleView);
