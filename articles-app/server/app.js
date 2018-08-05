@@ -16,7 +16,7 @@ const url =
 //configure cloudinary
 cloudinary.config({
   cloud_name: "dlndttviv",
-  api_key: "167699359734299",
+  api_key: "***",
   api_secret: "umadQtJu5UTjZyrC_bSTctBNVlM"
 });
 
